@@ -4,3 +4,14 @@ services:
 script :
     - docker build -t soundaryamangesh/node .
     - docker images soundaryamangesh/node 
+
+before deploy:
+    - docker login -u soundaryamangesh -p Nagendrablock#244 
+
+
+deploy: 
+    provider: script
+    script: docker push soundaryamangesh/node
+    on:
+        branch : master
+        
