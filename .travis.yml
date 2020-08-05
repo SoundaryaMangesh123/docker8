@@ -2,8 +2,8 @@ sudo: required
 services: 
     - docker
 script :
-    - docker build -t soundaryamangesh/node .
-    - docker images soundaryamangesh/node 
+    - docker build -t soundaryamangesh/nodenew .
+    - docker images soundaryamangesh/nodenew 
 
 before deploy:
     - docker login -u soundaryamangesh -p Nagendrablock#244 
@@ -11,7 +11,6 @@ before deploy:
 
 deploy: 
     provider: script
-    script: docker push soundaryamangesh/node
+    script: docker push soundaryamangesh/nodenew
     on:
         branch : master
-        
